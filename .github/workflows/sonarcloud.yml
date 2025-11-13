@@ -45,3 +45,4 @@ jobs:
             -Dsonar.projectKey=Sting6-6code_Online_platform_C-
             "-Dsonar.projectName=Online Learning Platform - C++"
             -Dsonar.projectVersion=1.0.0
+            -Dsonar.cfamily.compile-commands=Cpp_online_platform/compile_commands.json
