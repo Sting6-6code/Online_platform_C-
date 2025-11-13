@@ -1,8 +1,17 @@
 # 🚀 快速开始：自动 SonarCloud 扫描
 
-## 仅需 3 步！
+## 仅需 4 步！
 
-### 第 1 步: 添加 GitHub Secret
+### 第 1 步: 在 SonarCloud 创建项目
+
+1. 访问 https://sonarcloud.io 并登录
+2. 点击 **"+"** → **"Analyze new project"**
+3. 选择 **"GitHub"** → 授权并选择 `Online_platform_C-` 仓库
+4. 点击 **"Set Up"** → 选择 **"With GitHub Actions"**
+
+> 💡 如需详细步骤，查看 `CREATE_SONARCLOUD_PROJECT.md`
+
+### 第 2 步: 添加 GitHub Secret
 
 1. 打开 GitHub 仓库
 2. **Settings** → **Secrets and variables** → **Actions**
@@ -13,7 +22,7 @@
 
 > 💡 **获取 Token**: 在 [SonarCloud](https://sonarcloud.io) → My Account → Security → Generate Tokens
 
-### 第 2 步: 推送工作流文件
+### 第 3 步: 推送工作流文件
 
 ```bash
 # 进入项目目录
@@ -26,7 +35,7 @@ git commit -m "Add GitHub Actions for automatic SonarCloud scanning"
 git push origin main
 ```
 
-### 第 3 步: 验证
+### 第 4 步: 验证
 
 1. 访问 GitHub 仓库的 **Actions** 标签
 2. 查看 "SonarCloud Analysis" 运行状态

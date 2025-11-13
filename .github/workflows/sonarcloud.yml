@@ -43,6 +43,6 @@ jobs:
           projectBaseDir: ./Cpp_online_platform
           args: >
             -Dsonar.organization=sting6-6code
-            -Dsonar.projectKey=Sting6-6code_-Online-Learning-Platform-C-
+            -Dsonar.projectKey=Sting6-6code_Online_platform_C-
             "-Dsonar.projectName=Online Learning Platform - C++"
             -Dsonar.projectVersion=1.0.0
