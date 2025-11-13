@@ -1,0 +1,48 @@
+name: SonarCloud Analysis
+
+on:
+  push:
+    branches:
+      - main
+      - master
+      - develop
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+jobs:
+  sonarcloud:
+    name: SonarCloud Scan
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # Shallow clones should be disabled for a better relevancy of analysis
+
+      - name: Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y g++ cmake
+
+      - name: Build project
+        working-directory: ./Cpp_online_platform
+        run: |
+          # Optional: Build the project if needed for better analysis
+          # Uncomment if you want to generate compile_commands.json
+          # cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=ON .
+          # make
+          echo "Build step (optional) - skipping for now"
+
+      - name: SonarCloud Scan
+        uses: SonarSource/sonarcloud-github-action@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Needed to get PR information, if any
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        with:
+          projectBaseDir: ./Cpp_online_platform
+          args: >
+            -Dsonar.organization=sting6-6code
+            -Dsonar.projectKey=Sting6-6code_-Online-Learning-Platform-Cpp
+            -Dsonar.projectName=Online Learning Platform - C++
+            -Dsonar.projectVersion=1.0.0
