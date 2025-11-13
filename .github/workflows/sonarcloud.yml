@@ -25,14 +25,13 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y g++ cmake
 
-      - name: Build project
+      - name: Generate compilation database
         working-directory: ./Cpp_online_platform
         run: |
-          # Optional: Build the project if needed for better analysis
-          # Uncomment if you want to generate compile_commands.json
-          # cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=ON .
+          # Generate compile_commands.json for C++ analysis
+          cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=ON .
+          # Optional: Build the project (not required for SonarCloud)
           # make
-          echo "Build step (optional) - skipping for now"
 
       - name: SonarCloud Scan
         uses: SonarSource/sonarqube-scan-action@v5.0.0
