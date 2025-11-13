@@ -159,7 +159,9 @@ jobs:
 3. **添加 Secret**
 
    - Name: `SONAR_TOKEN`
-   - Value: `352fc59b4650bca70ca4d2c8f273f5012948dcba`
+   - Value: `你的 SonarCloud Token`（从 SonarCloud 获取）
+
+   > 💡 如何获取 Token: SonarCloud → My Account → Security → Generate Tokens
 
 4. **点击 "Add secret"**
 

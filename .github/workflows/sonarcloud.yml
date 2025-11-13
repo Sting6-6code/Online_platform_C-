@@ -35,7 +35,7 @@ jobs:
           echo "Build step (optional) - skipping for now"
 
       - name: SonarCloud Scan
-        uses: SonarSource/sonarcloud-github-action@master
+        uses: SonarSource/sonarqube-scan-action@v5.0.0
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Needed to get PR information, if any
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
@@ -44,5 +44,5 @@ jobs:
           args: >
             -Dsonar.organization=sting6-6code
             -Dsonar.projectKey=Sting6-6code_-Online-Learning-Platform-Cpp
-            -Dsonar.projectName=Online Learning Platform - C++
+            "-Dsonar.projectName=Online Learning Platform - C++"
             -Dsonar.projectVersion=1.0.0

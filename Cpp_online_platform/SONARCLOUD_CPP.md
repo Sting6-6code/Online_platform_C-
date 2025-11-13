@@ -41,7 +41,7 @@ INFO: SonarScanner 4.8.0.2856
    - **Project key**: `Sting6-6code_-Online-Learning-Platform-Cpp`
    - **Display name**: `Online Learning Platform - C++`
 6. 选择 "C++" 作为主要语言
-7. 您已有的 Token 可以继续使用：`352fc59b4650bca70ca4d2c8f273f5012948dcba`
+7. 生成新的 Token：My Account → Security → Generate Tokens
 
 ---
 
